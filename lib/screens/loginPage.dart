@@ -1,11 +1,8 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fitness/screens/homePage.dart';
-import 'package:fitness/main.dart';
 import 'package:fitness/screens/singinPage.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class LoginPage extends StatefulWidget {
   static const String sayfaName = "/LoginPage";
