@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
           builder: (context, snapshot) {
             if (snapshot.hasError) {
               //yanıt geldi ama hatalı ise
-              return Center(
+              return const Center(
                 child: Text("beklenmeyen bir hata oluştu"),
               );
             } else if (snapshot.hasData) {
@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
                 body: BaslangicEkrani(),
               );
             } else {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             }
@@ -77,7 +77,7 @@ class BaslangicEkrani extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage("lib/assets/images/spor.jpg"),
           fit: BoxFit.cover,
@@ -97,8 +97,8 @@ class BaslangicEkrani extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           "HOŞGELDİNİZ",
                           style: TextStyle(
@@ -107,8 +107,8 @@ class BaslangicEkrani extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           "Başlamak için lütfen giriş yapınız veya kayıt olunuz!",
                           style: TextStyle(
@@ -124,8 +124,8 @@ class BaslangicEkrani extends StatelessWidget {
                           height: 60,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: Color.fromRGBO(123, 39, 163, 1),
-                              shadowColor: Color.fromRGBO(200, 47, 129, 1),
+                              primary: const Color.fromRGBO(123, 39, 163, 1),
+                              shadowColor: const Color.fromRGBO(200, 47, 129, 1),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
@@ -134,7 +134,7 @@ class BaslangicEkrani extends StatelessWidget {
                               Navigator.pushReplacementNamed(
                                   context, LoginPage.sayfaName);
                             },
-                            child: Text(
+                            child: const Text(
                               "GİRİŞ YAP",
                               style: TextStyle(
                                 color: Colors.white,
@@ -154,7 +154,7 @@ class BaslangicEkrani extends StatelessWidget {
                                 Navigator.pushReplacementNamed(
                                     context, SinginPage.sayfaName);
                               },
-                              child: Text(
+                              child: const Text(
                                 "KAYIT OL",
                                 style: TextStyle(
                                   color: Colors.white,
@@ -162,8 +162,8 @@ class BaslangicEkrani extends StatelessWidget {
                                 ),
                               ),
                               style: ElevatedButton.styleFrom(
-                                primary: Color.fromRGBO(194, 46, 131, 1),
-                                shadowColor: Color.fromRGBO(128, 39, 161, 1),
+                                primary: const Color.fromRGBO(194, 46, 131, 1),
+                                shadowColor: const Color.fromRGBO(128, 39, 161, 1),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20.0),
                                 ),
@@ -183,7 +183,7 @@ class BaslangicEkrani extends StatelessWidget {
 }
 
 Widget arkaplanRenk = Container(
-    decoration: BoxDecoration(
+    decoration: const BoxDecoration(
   gradient: LinearGradient(
       begin: Alignment.topLeft,
       end: Alignment.bottomLeft,
