@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "144719825968",
+    "project_id": "evde-spor",
+    "storage_bucket": "evde-spor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144719825968:android:723e5c253c8d84c661b1f5",
+        "android_client_info": {
+          "package_name": "com.example.fitness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144719825968-5fp590i6u51phg423qnjup6m2o6ipa7f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUMB7YX2CJus6m6r-m1KSkeAwI2JQeZfU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144719825968-5fp590i6u51phg423qnjup6m2o6ipa7f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
