@@ -24,27 +24,21 @@ class HomePage extends StatelessWidget {
         switch (settings.name) {
           case HomePage.sayfaName:
             return MaterialPageRoute(builder: (context) => HomePage());
-            break;
           case SinginPage.sayfaName:
             return MaterialPageRoute(builder: (context) => SinginPage());
-            break;
           case LoginPage.sayfaName:
             return MaterialPageRoute(builder: (context) => LoginPage());
-            break;
           case HomePage1.sayfaName:
             return MaterialPageRoute(builder: (context) => HomePage1());
-            break;
           case ProfilePage.sayfaName:
             return MaterialPageRoute(builder: (context) => ProfilePage());
-            break;
           case NotificationsPage.sayfaName:
             return MaterialPageRoute(builder: (context) => NotificationsPage());
-            break;
           case Hareket1.sayfaName:
             return MaterialPageRoute(
                 builder: (context) =>
                     Hareket1(settings.arguments as Kullanici));
-            break;
+            
           default:
             null;
         }

@@ -12,7 +12,7 @@ class Hareket1 extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: BottomAppBar(
           child: Container(
-        margin: EdgeInsets.only(left: 30.0, right: 30.0, bottom: 4.0),
+        margin: const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 4.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -22,27 +22,27 @@ class Hareket1 extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context, HomePage1.sayfaName);
                     },
-                    child: Icon(
+                    child: const Icon(
                       FontAwesomeIcons.longArrowAltLeft,
                       size: 40,
                       color: Color.fromRGBO(95, 0, 108, 1),
                     ))),
-            SizedBox(
+            const SizedBox(
               width: 3.2,
             ),
             Expanded(
               flex: 2,
               child: ElevatedButton(
                   onPressed: () {},
-                  child: Text("BAŞLA",
+                  child: const Text("BAŞLA",
                       style: TextStyle(
                         fontSize: 24,
                       )),
                   style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(95, 0, 108, 1),
+                      primary: const Color.fromRGBO(95, 0, 108, 1),
                       padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                      textStyle: TextStyle(
+                          const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                      textStyle: const TextStyle(
                           fontSize: 10, fontWeight: FontWeight.bold))),
             )
           ],
@@ -58,14 +58,14 @@ class Hareket1 extends StatelessWidget {
                 height: 350,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(30),
                       bottomRight: Radius.circular(30)),
                   image: DecorationImage(
                     colorFilter: ColorFilter.mode(
-                        Color.fromRGBO(95, 0, 108, 1).withOpacity(0.5),
+                        const Color.fromRGBO(95, 0, 108, 1).withOpacity(0.5),
                         BlendMode.srcOver),
-                    image: AssetImage("lib/assets/images/gogusKaslari.jpg"),
+                    image: const AssetImage("lib/assets/images/gogusKaslari.jpg"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -77,7 +77,7 @@ class Hareket1 extends StatelessWidget {
                     Text(
                       "${kullanici_1.secilenButton}",
                       textAlign: TextAlign.end,
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: const TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   ],
                 ),
@@ -85,20 +85,20 @@ class Hareket1 extends StatelessWidget {
             ),
             Container(
                 child: kullanici_1.sayi == 1
-                    ? Text("20 dakika-> 4 egzersiz",
+                    ? const Text("20 dakika-> 4 egzersiz",
                         style: TextStyle(
                             color: Color.fromRGBO(95, 0, 108, 1), fontSize: 16))
                     : kullanici_1.sayi == 2
-                        ? Text("30 dakika-> 4 egzersiz",
+                        ? const Text("30 dakika-> 4 egzersiz",
                             style: TextStyle(
                                 color: Color.fromRGBO(95, 0, 108, 1),
                                 fontSize: 16))
                         : kullanici_1.sayi == 3
-                            ? Text("40 dakika-> 4 egzersiz",
+                            ? const Text("40 dakika-> 4 egzersiz",
                                 style: TextStyle(
                                     color: Color.fromRGBO(95, 0, 108, 1),
                                     fontSize: 16))
-                            : Text("HATALI GİRİŞ",
+                            : const Text("HATALI GİRİŞ",
                                 style: TextStyle(
                                     color: Color.fromRGBO(95, 0, 108, 1),
                                     fontSize: 16))),
@@ -116,7 +116,7 @@ class Hareket1 extends StatelessWidget {
                                 width: 125.0,
                               ),
                             ),
-                            Expanded(
+                            const Expanded(
                               child: Text(
                                 "barbell bench press ",
                                 style: TextStyle(
@@ -128,7 +128,7 @@ class Hareket1 extends StatelessWidget {
                             )
                           ],
                         ),
-                        Divider(
+                        const Divider(
                           height: 2,
                           color: Colors.blue,
                         ),
@@ -141,7 +141,7 @@ class Hareket1 extends StatelessWidget {
                                 width: 125.0,
                               ),
                             ),
-                            Expanded(
+                            const Expanded(
                               child: Text(
                                 "Cable crossover",
                                 style: TextStyle(
@@ -153,7 +153,7 @@ class Hareket1 extends StatelessWidget {
                             )
                           ],
                         ),
-                        Divider(
+                        const Divider(
                           height: 2,
                           color: Colors.blue,
                         ),
@@ -166,7 +166,7 @@ class Hareket1 extends StatelessWidget {
                                 width: 125.0,
                               ),
                             ),
-                            Expanded(
+                            const Expanded(
                               child: Text(
                                 "Chest dip",
                                 style: TextStyle(
@@ -178,7 +178,7 @@ class Hareket1 extends StatelessWidget {
                             )
                           ],
                         ),
-                        Divider(
+                        const Divider(
                           height: 2,
                           color: Colors.blue,
                         ),
@@ -191,7 +191,7 @@ class Hareket1 extends StatelessWidget {
                                 width: 125.0,
                               ),
                             ),
-                            Expanded(
+                            const Expanded(
                               child: Text(
                                 "Dumbbell fly",
                                 style: TextStyle(
@@ -218,7 +218,7 @@ class Hareket1 extends StatelessWidget {
                                     width: 125.0,
                                   ),
                                 ),
-                                Expanded(
+                                const Expanded(
                                   child: Text(
                                     "Barbell front raise",
                                     style: TextStyle(
@@ -230,7 +230,7 @@ class Hareket1 extends StatelessWidget {
                                 )
                               ],
                             ),
-                            Divider(
+                            const Divider(
                               height: 2,
                               color: Colors.blue,
                             ),
@@ -243,7 +243,7 @@ class Hareket1 extends StatelessWidget {
                                     width: 125.0,
                                   ),
                                 ),
-                                Expanded(
+                                const Expanded(
                                   child: Text(
                                     "Dumbbell shoulder press",
                                     style: TextStyle(
@@ -269,7 +269,7 @@ class Hareket1 extends StatelessWidget {
                                         width: 125.0,
                                       ),
                                     ),
-                                    Expanded(
+                                    const Expanded(
                                       child: Text(
                                         "Cable lat pulldown",
                                         style: TextStyle(
@@ -281,7 +281,7 @@ class Hareket1 extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                Divider(
+                                const Divider(
                                   height: 2,
                                   color: Colors.blue,
                                 ),
@@ -294,7 +294,7 @@ class Hareket1 extends StatelessWidget {
                                         width: 125.0,
                                       ),
                                     ),
-                                    Expanded(
+                                    const Expanded(
                                       child: Text(
                                         "Cable lat pulldown",
                                         style: TextStyle(
@@ -306,7 +306,7 @@ class Hareket1 extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                Divider(
+                                const Divider(
                                   height: 2,
                                   color: Colors.blue,
                                 ),
@@ -319,7 +319,7 @@ class Hareket1 extends StatelessWidget {
                                         width: 125.0,
                                       ),
                                     ),
-                                    Expanded(
+                                    const Expanded(
                                       child: Text(
                                         "Chin up",
                                         style: TextStyle(
@@ -331,7 +331,7 @@ class Hareket1 extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                Divider(
+                                const Divider(
                                   height: 2,
                                   color: Colors.blue,
                                 ),
@@ -344,7 +344,7 @@ class Hareket1 extends StatelessWidget {
                                         width: 125.0,
                                       ),
                                     ),
-                                    Expanded(
+                                    const Expanded(
                                       child: Text(
                                         "Chip up",
                                         style: TextStyle(
@@ -370,7 +370,7 @@ class Hareket1 extends StatelessWidget {
                                             width: 125.0,
                                           ),
                                         ),
-                                        Expanded(
+                                        const Expanded(
                                           child: Text(
                                             "Bicycle crunch",
                                             style: TextStyle(
@@ -383,7 +383,7 @@ class Hareket1 extends StatelessWidget {
                                         )
                                       ],
                                     ),
-                                    Divider(
+                                    const Divider(
                                       height: 2,
                                       color: Colors.blue,
                                     ),
@@ -396,7 +396,7 @@ class Hareket1 extends StatelessWidget {
                                             width: 125.0,
                                           ),
                                         ),
-                                        Expanded(
+                                        const Expanded(
                                           child: Text(
                                             "Bird dog",
                                             style: TextStyle(
@@ -409,7 +409,7 @@ class Hareket1 extends StatelessWidget {
                                         )
                                       ],
                                     ),
-                                    Divider(
+                                    const Divider(
                                       height: 2,
                                       color: Colors.blue,
                                     ),
@@ -422,7 +422,7 @@ class Hareket1 extends StatelessWidget {
                                             width: 125.0,
                                           ),
                                         ),
-                                        Expanded(
+                                       const Expanded(
                                           child: Text(
                                             "Birdge",
                                             style: TextStyle(
@@ -435,7 +435,7 @@ class Hareket1 extends StatelessWidget {
                                         )
                                       ],
                                     ),
-                                    Divider(
+                                    const Divider(
                                       height: 2,
                                       color: Colors.blue,
                                     ),
@@ -448,7 +448,7 @@ class Hareket1 extends StatelessWidget {
                                             width: 125.0,
                                           ),
                                         ),
-                                        Expanded(
+                                      const Expanded(
                                           child: Text(
                                             "Push up",
                                             style: TextStyle(
@@ -474,7 +474,7 @@ class Hareket1 extends StatelessWidget {
                                             width: 125.0,
                                           ),
                                         ),
-                                        Expanded(
+                                       const Expanded(
                                           child: Text(
                                             "Barbell squat",
                                             style: TextStyle(
@@ -487,7 +487,7 @@ class Hareket1 extends StatelessWidget {
                                         )
                                       ],
                                     ),
-                                    Divider(
+                                   const Divider(
                                       height: 2,
                                       color: Colors.blue,
                                     ),
@@ -500,7 +500,7 @@ class Hareket1 extends StatelessWidget {
                                             width: 125.0,
                                           ),
                                         ),
-                                        Expanded(
+                                       const Expanded(
                                           child: Text(
                                             "Leg Extension",
                                             style: TextStyle(
@@ -513,7 +513,7 @@ class Hareket1 extends StatelessWidget {
                                         )
                                       ],
                                     ),
-                                    Divider(
+                                   const Divider(
                                       height: 2,
                                       color: Colors.blue,
                                     ),
@@ -526,7 +526,7 @@ class Hareket1 extends StatelessWidget {
                                             width: 125.0,
                                           ),
                                         ),
-                                        Expanded(
+                                      const  Expanded(
                                           child: Text(
                                             "Leg press",
                                             style: TextStyle(
@@ -539,7 +539,7 @@ class Hareket1 extends StatelessWidget {
                                         )
                                       ],
                                     ),
-                                    Divider(
+                                    const Divider(
                                       height: 2,
                                       color: Colors.blue,
                                     ),
@@ -552,7 +552,7 @@ class Hareket1 extends StatelessWidget {
                                             width: 125.0,
                                           ),
                                         ),
-                                        Expanded(
+                                       const Expanded(
                                           child: Text(
                                             "Lying leg curl",
                                             style: TextStyle(
@@ -577,18 +577,18 @@ class Hareket1 extends StatelessWidget {
 //setin Seviyesi için yazdım
   Text seviyeSet() {
     return kullanici_1.sayi == 1
-        ? Text(
+        ? const Text(
             "3x10",
             style: TextStyle(color: Colors.black, fontSize: 14),
             textDirection: TextDirection.rtl,
           )
         : kullanici_1.sayi == 2
-            ? Text(
+            ? const Text(
                 "4x10",
                 style: TextStyle(color: Colors.black, fontSize: 14),
                 textDirection: TextDirection.rtl,
               )
-            : Text(
+            : const Text(
                 "5x10",
                 style: TextStyle(color: Colors.black, fontSize: 14),
                 textDirection: TextDirection.rtl,

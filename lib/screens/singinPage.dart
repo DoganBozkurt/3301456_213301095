@@ -33,15 +33,15 @@ class _SinginPageState extends State<SinginPage> {
             child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(50),
                     bottomRight: Radius.circular(50),
                   ),
                   image: DecorationImage(
                     colorFilter: ColorFilter.mode(
-                        Color.fromRGBO(95, 0, 108, 1).withOpacity(0.8),
+                        const Color.fromRGBO(95, 0, 108, 1).withOpacity(0.8),
                         BlendMode.srcOver),
-                    image: AssetImage("lib/assets/images/spor.jpg"),
+                    image: const AssetImage("lib/assets/images/spor.jpg"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -88,7 +88,7 @@ class _SinginPageState extends State<SinginPage> {
                             bottom: 15, left: 10, right: 10),
                         child: TextFormField(
                             controller: adi,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                                 prefixIcon: Icon(
                                   FontAwesomeIcons.user,
                                   color: Color.fromRGBO(95, 0, 108, 1),
@@ -107,7 +107,7 @@ class _SinginPageState extends State<SinginPage> {
                             bottom: 15, left: 10, right: 10),
                         child: TextFormField(
                             controller: mail,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                                 prefixIcon: Icon(
                                   FontAwesomeIcons.envelope,
                                   color: Color.fromRGBO(95, 0, 108, 1),
@@ -128,7 +128,7 @@ class _SinginPageState extends State<SinginPage> {
                             bottom: 15, left: 10, right: 10),
                         child: TextFormField(
                             controller: sifre,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                                 prefixIcon: Icon(
                                   FontAwesomeIcons.key,
                                   color: Color.fromRGBO(95, 0, 108, 1),
@@ -147,7 +147,7 @@ class _SinginPageState extends State<SinginPage> {
                             bottom: 15, left: 10, right: 10),
                         child: TextFormField(
                             controller: sifreTekrar,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                                 prefixIcon: Icon(
                                   FontAwesomeIcons.key,
                                   color: Color.fromRGBO(95, 0, 108, 1),
@@ -173,11 +173,11 @@ class _SinginPageState extends State<SinginPage> {
                                 });
                               },
                               child: Container(
-                                margin: EdgeInsets.only(left: 8.0),
+                                margin: const EdgeInsets.only(left: 8.0),
                                 decoration: BoxDecoration(
                                   color: secilenCinsiyet == "kadın"
                                       ? Colors.black54
-                                      : Color.fromRGBO(95, 0, 108, 1),
+                                      : const Color.fromRGBO(95, 0, 108, 1),
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 child: Column(
@@ -195,7 +195,7 @@ class _SinginPageState extends State<SinginPage> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 2.5,
                           ),
                           Expanded(
@@ -209,12 +209,12 @@ class _SinginPageState extends State<SinginPage> {
                                 decoration: BoxDecoration(
                                   color: secilenCinsiyet == "erkek"
                                       ? Colors.black54
-                                      : Color.fromRGBO(95, 0, 108, 1),
+                                      : const Color.fromRGBO(95, 0, 108, 1),
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 child: Column(
                                   children: [
-                                    Icon(
+                                   Icon(
                                       FontAwesomeIcons.venus,
                                       color: Colors.white,
                                       size: 65,
@@ -253,7 +253,7 @@ class _SinginPageState extends State<SinginPage> {
                                     children: [
                                       Expanded(
                                         child: Container(
-                                          margin: EdgeInsets.only(
+                                          margin:const EdgeInsets.only(
                                               right: 3, left: 3),
                                           child: ButtonTheme(
                                             child: OutlineButton(
@@ -262,11 +262,11 @@ class _SinginPageState extends State<SinginPage> {
                                                   secilenKilo++;
                                                 });
                                               },
-                                              child: Icon(
+                                              child:const Icon(
                                                 FontAwesomeIcons.plus,
                                                 color: Colors.white,
                                               ),
-                                              borderSide: BorderSide(
+                                              borderSide:const BorderSide(
                                                   color: Colors.white),
                                             ),
                                           ),
@@ -274,7 +274,7 @@ class _SinginPageState extends State<SinginPage> {
                                       ),
                                       Expanded(
                                         child: Container(
-                                          margin: EdgeInsets.only(
+                                          margin:const EdgeInsets.only(
                                               right: 3, left: 3),
                                           child: ButtonTheme(
                                             child: OutlineButton(
@@ -283,11 +283,11 @@ class _SinginPageState extends State<SinginPage> {
                                                   secilenKilo--;
                                                 });
                                               },
-                                              child: Icon(
+                                              child:const Icon(
                                                 FontAwesomeIcons.minus,
                                                 color: Colors.white,
                                               ),
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                   color: Colors.white),
                                             ),
                                           ),
@@ -299,32 +299,32 @@ class _SinginPageState extends State<SinginPage> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 2.5,
                           ),
                           Expanded(
                             child: Container(
-                              margin: EdgeInsets.only(right: 8.0),
+                              margin: const EdgeInsets.only(right: 8.0),
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(95, 0, 108, 1),
+                                color: const Color.fromRGBO(95, 0, 108, 1),
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
                               child: Column(
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     FontAwesomeIcons.restroom,
                                     color: Colors.white,
                                     size: 25,
                                   ),
                                   Text("BOYUNUZ: $secilenBoy",
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           color: Colors.white, fontSize: 12)),
                                   Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Expanded(
                                         child: Container(
-                                          margin: EdgeInsets.only(
+                                          margin: const EdgeInsets.only(
                                               right: 3, left: 3),
                                           child: ButtonTheme(
                                             child: OutlineButton(
@@ -333,11 +333,11 @@ class _SinginPageState extends State<SinginPage> {
                                                   secilenBoy++;
                                                 });
                                               },
-                                              child: Icon(
+                                              child: const Icon(
                                                 FontAwesomeIcons.plus,
                                                 color: Colors.white,
                                               ),
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                   color: Colors.white),
                                             ),
                                           ),
@@ -345,7 +345,7 @@ class _SinginPageState extends State<SinginPage> {
                                       ),
                                       Expanded(
                                         child: Container(
-                                          margin: EdgeInsets.only(
+                                          margin: const EdgeInsets.only(
                                               right: 3, left: 3),
                                           child: ButtonTheme(
                                             child: OutlineButton(
@@ -354,11 +354,11 @@ class _SinginPageState extends State<SinginPage> {
                                                   secilenBoy--;
                                                 });
                                               },
-                                              child: Icon(
+                                              child: const Icon(
                                                 FontAwesomeIcons.minus,
                                                 color: Colors.white,
                                               ),
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                   color: Colors.white),
                                             ),
                                           ),
@@ -393,7 +393,6 @@ class _SinginPageState extends State<SinginPage> {
                                     "kilo": secilenKilo,
                                     "boy": secilenBoy,
                                   };
-                                  print(sifreTekrar.text);
                                   FirebaseFirestore firestore =
                                       FirebaseFirestore.instance;
                                   CollectionReference usersCollectionRef =
@@ -413,8 +412,8 @@ class _SinginPageState extends State<SinginPage> {
                                 ),
                               ),
                               style: ElevatedButton.styleFrom(
-                                primary: Color.fromRGBO(194, 46, 131, 1),
-                                shadowColor: Color.fromRGBO(128, 39, 161, 1),
+                                primary: const Color.fromRGBO(194, 46, 131, 1),
+                                shadowColor: const Color.fromRGBO(128, 39, 161, 1),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20.0),
                                 ),
@@ -428,8 +427,8 @@ class _SinginPageState extends State<SinginPage> {
                           height: 60,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: Color.fromRGBO(123, 39, 163, 1),
-                              shadowColor: Color.fromRGBO(200, 47, 129, 1),
+                              primary: const Color.fromRGBO(123, 39, 163, 1),
+                              shadowColor: const Color.fromRGBO(200, 47, 129, 1),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
@@ -437,7 +436,7 @@ class _SinginPageState extends State<SinginPage> {
                             onPressed: () {
                               Navigator.pushReplacementNamed(context, LoginPage.sayfaName);
                             },
-                            child: Text(
+                            child: const Text(
                               "HESABIN ZATEN VAR MI?",
                               style: TextStyle(
                                 color: Colors.white,
@@ -463,9 +462,9 @@ _kayitBasariliDialog(context) {
   AwesomeDialog(
     context: context,
     dialogType: DialogType.SUCCES,
-    borderSide: BorderSide(color: Colors.green, width: 2),
+    borderSide: const BorderSide(color: Colors.green, width: 2),
     width: 280,
-    buttonsBorderRadius: BorderRadius.all(Radius.circular(2)),
+    buttonsBorderRadius: const BorderRadius.all(Radius.circular(2)),
     headerAnimationLoop: false,
     animType: AnimType.BOTTOMSLIDE,
     title: 'KAYIT BAŞARILI',
@@ -474,21 +473,21 @@ _kayitBasariliDialog(context) {
     btnOkOnPress: () {
       Navigator.pushReplacementNamed(context, LoginPage.sayfaName);
     },
-  )..show();
+  ).show();
 }
 
 _kayitBasarisizDialog(context) {
   AwesomeDialog(
     context: context,
     dialogType: DialogType.ERROR,
-    borderSide: BorderSide(color: Colors.green, width: 2),
+    borderSide: const BorderSide(color: Colors.green, width: 2),
     width: 280,
-    buttonsBorderRadius: BorderRadius.all(Radius.circular(2)),
+    buttonsBorderRadius: const BorderRadius.all(Radius.circular(2)),
     headerAnimationLoop: false,
     animType: AnimType.BOTTOMSLIDE,
     title: 'KAYIT BAŞARISIZ',
     desc: 'Lütfen girmiş olduğunuz bilgileri teyit ediniz...',
     showCloseIcon: true,
     btnOkOnPress: () {},
-  )..show();
+  ).show();
 }

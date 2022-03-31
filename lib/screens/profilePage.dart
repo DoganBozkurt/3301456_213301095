@@ -18,9 +18,9 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        bottomNavigationBar: AltMenu(),
+        bottomNavigationBar: const AltMenu(),
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomLeft,
@@ -41,28 +41,28 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: [
                     Stack(
                       children: [
-                        CircleAvatar(
+                        const CircleAvatar(
                           radius: 50,
                           backgroundImage:
-                              AssetImage("lib/assets/images/avatar.jpg"),
+                              const AssetImage("lib/assets/images/avatar.jpg"),
                         ),
-                        Positioned(
+                        const Positioned(
                             bottom: 20.0,
                             right: 10.0,
-                            child: InkWell(
+                            child: const InkWell(
                                 child: Icon(Icons.camera_alt,
                                     size: 28.0,
                                     color: Color.fromRGBO(95, 0, 108, 1))))
                       ],
                     ),
                     Container(
-                      child: Text("Adı Soyadı"),
+                      child: const Text("Adı Soyadı"),
                       color: Colors.white,
                     ),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 3.5,
               ),
               //kilo boy
@@ -77,17 +77,17 @@ class _ProfilePageState extends State<ProfilePage> {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Color.fromRGBO(95, 0, 108, 1),
+                            color: const Color.fromRGBO(95, 0, 108, 1),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Column(
                             children: [
-                              Icon(
+                              const Icon(
                                 FontAwesomeIcons.mars,
                                 color: Colors.white,
                                 size: 35,
                               ),
-                              Text("KADIN",
+                              const Text("KADIN",
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 12))
                             ],
@@ -95,7 +95,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 2.5,
                     ),
                     Expanded(
@@ -110,12 +110,12 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                           child: Column(
                             children: [
-                              Icon(
+                              const Icon(
                                 FontAwesomeIcons.venus,
                                 color: Colors.white,
                                 size: 35,
                               ),
-                              Text(
+                              const Text(
                                 "ERKEK",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 12),
@@ -125,52 +125,52 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 2.5,
                     ),
                     Expanded(
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Color.fromRGBO(95, 0, 108, 1),
+                          color: const Color.fromRGBO(95, 0, 108, 1),
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: Column(
                           children: [
-                            SizedBox(height: 1.5,),
-                            Icon(
+                            const SizedBox(height: 1.5,),
+                            const Icon(
                               FontAwesomeIcons.weight,
                               color: Colors.white,
                               size: 35,
                             ),
-                            SizedBox(height: 1.5,),
+                            const SizedBox(height: 1.5,),
                             Text("KİLONUZ: $secilenKilo",
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.white, fontSize: 12)),
                           
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 2.5,
                     ),
                     Expanded(
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Color.fromRGBO(95, 0, 108, 1),
+                          color: const Color.fromRGBO(95, 0, 108, 1),
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: Column(
                           children: [
-                            SizedBox(height: 1.5,),
-                            Icon(
+                            const SizedBox(height: 1.5,),
+                            const Icon(
                               FontAwesomeIcons.restroom,
                               color: Colors.white,
                               size: 35,
                             ),
-                            SizedBox(height: 1.5,),
+                            const SizedBox(height: 1.5,),
                             Text("BOYUNUZ: $secilenBoy",
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.white, fontSize: 12)),
                            
                           ],
@@ -180,10 +180,10 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 3,
               ),
-              Text("BAŞARILARIN",
+              const Text("BAŞARILARIN",
                   style: TextStyle(color: Colors.white, fontSize: 16)),
               //hedef Kilo
               Expanded(
@@ -191,21 +191,21 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: Stack(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 6.0, right: 6.0),
+                        margin: const EdgeInsets.only(left: 6.0, right: 6.0),
                         height: 100,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             gradient: LinearGradient(
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomLeft,
                                 colors: [
                               Color.fromRGBO(95, 0, 108, 1),
-                              Color.fromRGBO(132, 40, 223, 1),
+                               Color.fromRGBO(132, 40, 223, 1),
                             ])),
                       ),
-                      Positioned(
+                      const Positioned(
                         top: 3.0,
                         left: 58.0,
-                        child: Text(
+                        child:  Text(
                           "Hedef Kilo",
                           style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
@@ -219,18 +219,18 @@ class _ProfilePageState extends State<ProfilePage> {
                           height: 80,
                         ),
                       ),
-                      Positioned(
+                      const Positioned(
                         top: 45.0,
                         left: 140.0,
                         child: Text(
                           "76",
-                          style: TextStyle(color: Colors.white, fontSize: 25),
+                          style:  TextStyle(color: Colors.white, fontSize: 25),
                         ),
                       ),
-                      Positioned(
+                      const Positioned(
                         top: 52.0,
                         left: 175.0,
-                        child: Text(
+                        child:  Text(
                           "KG",
                           style: TextStyle(color: Colors.white, fontSize: 10),
                         ),
@@ -247,7 +247,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ],
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 3.5,
               ),
 
@@ -258,11 +258,11 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: Stack(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 6.0, right: 6.0),
+                        margin: const EdgeInsets.only(left: 6.0, right: 6.0),
                         height: 100,
-                        color: Color.fromRGBO(95, 0, 108, 1),
+                        color: const Color.fromRGBO(95, 0, 108, 1),
                       ),
-                      Positioned(
+                      const Positioned(
                         top: 33.0,
                         left: 58.0,
                         child: Text(
@@ -270,7 +270,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
                       ),
-                      Positioned(
+                      const Positioned(
                         top: 50.0,
                         left: 100.0,
                         child: Text(
@@ -278,12 +278,12 @@ class _ProfilePageState extends State<ProfilePage> {
                           style: TextStyle(color: Colors.white, fontSize: 25),
                         ),
                       ),
-                      Positioned(
+                      const Positioned(
                         top: 60.0,
                         left: 130.0,
-                        child: Text(
+                        child:  Text(
                           "/5",
-                          style: TextStyle(color: Colors.white, fontSize: 10),
+                          style:  TextStyle(color: Colors.white, fontSize: 10),
                         ),
                       ),
                       //Çizgiler
@@ -307,13 +307,13 @@ class _ProfilePageState extends State<ProfilePage> {
                   )),
 
 //Senin Programın
-              Text("SENİN PORGRAMIN",
-                  style: TextStyle(color: Colors.white, fontSize: 16)),
+              const Text("SENİN PORGRAMIN",
+                  style:  TextStyle(color: Colors.white, fontSize: 16)),
               Expanded(
                 flex: 5,
                 child: Container(
                   height: 580,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
@@ -325,28 +325,28 @@ class _ProfilePageState extends State<ProfilePage> {
                       children: [
                         Container(
                           margin:
-                              EdgeInsets.only(left: 5.0, right: 5.0, top: 5.0),
+                              const EdgeInsets.only(left: 5.0, right: 5.0, top: 5.0),
                           width: double.infinity,
                           height: 165,
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               colorFilter: ColorFilter.mode(
-                                  Color.fromRGBO(123, 39, 163, 1)
+                                  const Color.fromRGBO(123, 39, 163, 1)
                                       .withOpacity(0.4),
                                   BlendMode.srcOver),
-                              image: AssetImage("lib/assets/images/sirtKaslari.jpg"),
+                              image: const AssetImage("lib/assets/images/sirtKaslari.jpg"),
                               fit: BoxFit.cover,
                             ),
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(5),
-                                bottomRight: Radius.circular(5),
-                                topLeft: Radius.circular(5),
-                                topRight: Radius.circular(5)),
+                            borderRadius: const BorderRadius.only(
+                                bottomLeft:  Radius.circular(5),
+                                bottomRight:  Radius.circular(5),
+                                topLeft:  Radius.circular(5),
+                                topRight:  Radius.circular(5)),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(14.0),
                             child: Container(
-                              child: Text(
+                              child: const Text(
                                 "SIRT \n KASLARI",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 30),
@@ -354,32 +354,32 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 4,
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 5.0, right: 5.0),
+                          margin: const EdgeInsets.only(left: 5.0, right: 5.0),
                           width: double.infinity,
                           height: 165,
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               colorFilter: ColorFilter.mode(
-                                  Color.fromRGBO(123, 39, 163, 1)
+                                  const Color.fromRGBO(123, 39, 163, 1)
                                       .withOpacity(0.4),
                                   BlendMode.srcOver),
-                              image: AssetImage("lib/assets/images/kolKaslari.jpg"),
+                              image: const AssetImage("lib/assets/images/kolKaslari.jpg"),
                               fit: BoxFit.cover,
                             ),
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(5),
-                                bottomRight: Radius.circular(5),
+                                bottomRight:  Radius.circular(5),
                                 topLeft: Radius.circular(5),
                                 topRight: Radius.circular(5)),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(14.0),
                             child: Container(
-                              child: Text(
+                              child: const Text(
                                 "KOL \n KASLARI",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 30),
@@ -387,32 +387,32 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 4,
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 5.0, right: 5.0),
+                          margin: const EdgeInsets.only(left: 5.0, right: 5.0),
                           width: double.infinity,
                           height: 165,
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               colorFilter: ColorFilter.mode(
-                                  Color.fromRGBO(123, 39, 163, 1)
+                                  const Color.fromRGBO(123, 39, 163, 1)
                                       .withOpacity(0.4),
                                   BlendMode.srcOver),
-                              image: AssetImage("lib/assets/images/bacakKaslari.jpg"),
+                              image: const AssetImage("lib/assets/images/bacakKaslari.jpg"),
                               fit: BoxFit.cover,
                             ),
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(5),
-                                bottomRight: Radius.circular(5),
+                                bottomRight:  Radius.circular(5),
                                 topLeft: Radius.circular(5),
-                                topRight: Radius.circular(5)),
+                                topRight:  Radius.circular(5)),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(14.0),
                             child: Container(
-                              child: Text(
+                              child: const Text(
                                 "BACAK \n KASLARI",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 30),

@@ -33,7 +33,7 @@ class _HomePage1State extends State<HomePage1> {
     return SafeArea(
       child: Scaffold(
           body: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomLeft,
@@ -45,7 +45,7 @@ class _HomePage1State extends State<HomePage1> {
             child: Column(
               children: [
                 Container(
-                  decoration: BoxDecoration(
+                  decoration:const BoxDecoration(
                     gradient: LinearGradient(colors: [
                       Color.fromRGBO(19, 20, 41, 1),
                       Color.fromRGBO(19, 20, 41, 1),
@@ -58,19 +58,19 @@ class _HomePage1State extends State<HomePage1> {
                     height: 80,
                     controller: _controller,
                     initialSelectedDate: DateTime.now(),
-                    selectionColor: Color.fromRGBO(123, 39, 163, 1),
+                    selectionColor:const Color.fromRGBO(123, 39, 163, 1),
                     selectedTextColor: Colors.white,
                     deactivatedColor: Colors.white,
-                    dayTextStyle: TextStyle(
+                    dayTextStyle:const TextStyle(
                       color: Colors.white,
                     ),
                     monthTextStyle:
-                        TextStyle(color: Colors.white, fontSize: 12),
-                    dateTextStyle: TextStyle(color: Colors.white, fontSize: 24),
+                       const TextStyle(color: Colors.white, fontSize: 12),
+                    dateTextStyle: const TextStyle(color: Colors.white, fontSize: 24),
                     inactiveDates: [
-                      DateTime.now().add(Duration(days: 3)),
-                      DateTime.now().add(Duration(days: 4)),
-                      DateTime.now().add(Duration(days: 7))
+                      DateTime.now().add(const Duration(days: 3)),
+                      DateTime.now().add(const Duration(days: 4)),
+                      DateTime.now().add(const Duration(days: 7))
                     ],
                     onDateChange: (date) {
                       // New date selected
@@ -80,22 +80,22 @@ class _HomePage1State extends State<HomePage1> {
                     },
                   ),
                 ),
-                SizedBox(
+               const SizedBox(
                   height: 10,
                 ),
                 Container(
                   alignment: Alignment.topLeft,
-                  decoration: BoxDecoration(
+                  decoration:const BoxDecoration(
                     gradient: LinearGradient(colors: [
                       Color.fromRGBO(19, 20, 41, 1),
                       Color.fromRGBO(19, 20, 41, 1),
                     ]),
                   ),
-                  child: Text("EGZERSİZ PLANLARI",
+                  child:const Text("EGZERSİZ PLANLARI",
                       style: TextStyle(color: Colors.white, fontSize: 25)),
                 ),
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     gradient: LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomLeft,
@@ -110,40 +110,40 @@ class _HomePage1State extends State<HomePage1> {
                         child: Container(
                           child: ElevatedButton(
                             onPressed: () {},
-                            child: Text("Acemi"),
+                            child: const Text("Acemi"),
                             style: ElevatedButton.styleFrom(
-                              primary: Color.fromRGBO(123, 39, 163, 1),
-                              shadowColor: Color.fromRGBO(200, 47, 129, 1),
+                              primary: const Color.fromRGBO(123, 39, 163, 1),
+                              shadowColor: const Color.fromRGBO(200, 47, 129, 1),
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 3.3,
                       ),
                       Expanded(
                         child: Container(
                           child: ElevatedButton(
                             onPressed: () {},
-                            child: Text("Orta seviye"),
+                            child: const Text("Orta seviye"),
                             style: ElevatedButton.styleFrom(
-                              primary: Color.fromRGBO(123, 39, 163, 1),
-                              shadowColor: Color.fromRGBO(200, 47, 129, 1),
+                              primary: const Color.fromRGBO(123, 39, 163, 1),
+                              shadowColor:const Color.fromRGBO(200, 47, 129, 1),
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(
+                     const SizedBox(
                         width: 3.3,
                       ),
                       Expanded(
                         child: Container(
                           child: ElevatedButton(
                             onPressed: () {},
-                            child: Text("İleri"),
+                            child: const Text("İleri"),
                             style: ElevatedButton.styleFrom(
-                              primary: Color.fromRGBO(123, 39, 163, 1),
-                              shadowColor: Color.fromRGBO(200, 47, 129, 1),
+                              primary:const Color.fromRGBO(123, 39, 163, 1),
+                              shadowColor:const Color.fromRGBO(200, 47, 129, 1),
                             ),
                           ),
                         ),
@@ -158,7 +158,7 @@ class _HomePage1State extends State<HomePage1> {
                   padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                   child: Container(
                     height: 580,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
@@ -170,7 +170,7 @@ class _HomePage1State extends State<HomePage1> {
                         children: [
                           //GOGUS KAS HAREKETİ
                           Container(
-                            margin: EdgeInsets.only(
+                            margin: const EdgeInsets.only(
                                 top: 3.50, right: 1.5, left: 1.5),
                             width: double.infinity,
                             height: 165,
@@ -178,8 +178,8 @@ class _HomePage1State extends State<HomePage1> {
                               blurSize: 150,
                               menuItems: [
                                 FocusedMenuItem(
-                                    title: Text('Başlangıç seviye'),
-                                    trailingIcon: Icon(
+                                    title:const Text('Başlangıç seviye'),
+                                    trailingIcon: const Icon(
                                         FontAwesomeIcons.heartBroken,
                                         size: 35),
                                     onPressed: () {
@@ -192,8 +192,8 @@ class _HomePage1State extends State<HomePage1> {
                                               sayi: 1));
                                     }),
                                 FocusedMenuItem(
-                                    title: Text('Orta seviye'),
-                                    trailingIcon: Icon(
+                                    title: const Text('Orta seviye'),
+                                    trailingIcon:const Icon(
                                         FontAwesomeIcons.heartbeat,
                                         size: 35),
                                     onPressed: () => {
@@ -207,8 +207,8 @@ class _HomePage1State extends State<HomePage1> {
                                                   sayi: 2)),
                                         }),
                                 FocusedMenuItem(
-                                    title: Text('İleri seviye'),
-                                    trailingIcon: Icon(
+                                    title: const Text('İleri seviye'),
+                                    trailingIcon:const Icon(
                                         FontAwesomeIcons.solidHeart,
                                         size: 35),
                                     onPressed: () => {
@@ -222,9 +222,9 @@ class _HomePage1State extends State<HomePage1> {
                                                   sayi: 3)),
                                         }),
                                 FocusedMenuItem(
-                                    title: Text('İPTAL',
+                                    title: const Text('İPTAL',
                                         style: TextStyle(color: Colors.white)),
-                                    trailingIcon: Icon(
+                                    trailingIcon: const Icon(
                                         FontAwesomeIcons.powerOff,
                                         color: Colors.white,
                                         size: 35),
@@ -234,7 +234,7 @@ class _HomePage1State extends State<HomePage1> {
                               blurBackgroundColor: Colors.blueGrey[900],
                               menuOffset: 20,
                               openWithTap: true,
-                              duration: Duration(seconds: 0),
+                              duration:const Duration(seconds: 0),
                               animateMenuItems: false,
                               onPressed: () {},
                               child: ClipRRect(
@@ -246,14 +246,14 @@ class _HomePage1State extends State<HomePage1> {
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         colorFilter: ColorFilter.mode(
-                                            Color.fromRGBO(123, 39, 163, 1)
+                                            const Color.fromRGBO(123, 39, 163, 1)
                                                 .withOpacity(0.4),
                                             BlendMode.srcOver),
-                                        image: AssetImage(
+                                        image: const AssetImage(
                                             "lib/assets/images/gogusKaslari.jpg"),
                                         fit: BoxFit.cover,
                                       ),
-                                      borderRadius: BorderRadius.only(
+                                      borderRadius: const BorderRadius.only(
                                           bottomLeft: Radius.circular(5),
                                           bottomRight: Radius.circular(5),
                                           topLeft: Radius.circular(5),
@@ -262,7 +262,7 @@ class _HomePage1State extends State<HomePage1> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(14.0),
                                       child: Container(
-                                        child: Text(
+                                        child: const Text(
                                           "GÖĞÜS \n KASLARI",
                                           style: TextStyle(
                                               color: Colors.white,
@@ -278,7 +278,7 @@ class _HomePage1State extends State<HomePage1> {
 
                           //KOL KASLARI
                           Container(
-                            margin: EdgeInsets.only(
+                            margin: const EdgeInsets.only(
                                 top: 3.50, right: 1.5, left: 1.5),
                             width: double.infinity,
                             height: 165,
@@ -286,8 +286,8 @@ class _HomePage1State extends State<HomePage1> {
                               blurSize: 150,
                               menuItems: [
                                 FocusedMenuItem(
-                                    title: Text('Başlangıç seviye'),
-                                    trailingIcon: Icon(
+                                    title: const Text('Başlangıç seviye'),
+                                    trailingIcon: const Icon(
                                         FontAwesomeIcons.heartBroken,
                                         size: 35),
                                     onPressed: () {
@@ -300,8 +300,8 @@ class _HomePage1State extends State<HomePage1> {
                                               sayi: 1));
                                     }),
                                 FocusedMenuItem(
-                                    title: Text('Orta seviye'),
-                                    trailingIcon: Icon(
+                                    title:const Text('Orta seviye'),
+                                    trailingIcon:const Icon(
                                         FontAwesomeIcons.heartbeat,
                                         size: 35),
                                     onPressed: () => {
@@ -314,8 +314,8 @@ class _HomePage1State extends State<HomePage1> {
                                               sayi: 2)),
                                     }),
                                 FocusedMenuItem(
-                                    title: Text('İleri seviye'),
-                                    trailingIcon: Icon(
+                                    title:const Text('İleri seviye'),
+                                    trailingIcon: const Icon(
                                         FontAwesomeIcons.solidHeart,
                                         size: 35),
                                     onPressed: () => {
@@ -328,9 +328,9 @@ class _HomePage1State extends State<HomePage1> {
                                               sayi: 3)),
                                     }),
                                 FocusedMenuItem(
-                                    title: Text('İPTAL',
+                                    title:const Text('İPTAL',
                                         style: TextStyle(color: Colors.white)),
-                                    trailingIcon: Icon(
+                                    trailingIcon: const Icon(
                                         FontAwesomeIcons.powerOff,
                                         color: Colors.white,
                                         size: 35),
@@ -340,7 +340,7 @@ class _HomePage1State extends State<HomePage1> {
                               blurBackgroundColor: Colors.blueGrey[900],
                               menuOffset: 20,
                               openWithTap: true,
-                              duration: Duration(seconds: 0),
+                              duration:const Duration(seconds: 0),
                               animateMenuItems: false,
                               onPressed: () {},
                               child: ClipRRect(
@@ -352,14 +352,14 @@ class _HomePage1State extends State<HomePage1> {
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         colorFilter: ColorFilter.mode(
-                                            Color.fromRGBO(123, 39, 163, 1)
+                                            const Color.fromRGBO(123, 39, 163, 1)
                                                 .withOpacity(0.4),
                                             BlendMode.srcOver),
-                                        image: AssetImage(
+                                        image:const AssetImage(
                                             "lib/assets/images/kolKaslari.jpg"),
                                         fit: BoxFit.cover,
                                       ),
-                                      borderRadius: BorderRadius.only(
+                                      borderRadius:const BorderRadius.only(
                                           bottomLeft: Radius.circular(5),
                                           bottomRight: Radius.circular(5),
                                           topLeft: Radius.circular(5),
@@ -368,7 +368,7 @@ class _HomePage1State extends State<HomePage1> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(14.0),
                                       child: Container(
-                                        child: Text(
+                                        child:const Text(
                                           "KOL \n KASLARI",
                                           style: TextStyle(
                                               color: Colors.white,
@@ -381,12 +381,12 @@ class _HomePage1State extends State<HomePage1> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 1,
                           ),
                           //SIRT KASLARI
                           Container(
-                            margin: EdgeInsets.only(
+                            margin:const EdgeInsets.only(
                                 top: 3.50, right: 1.5, left: 1.5),
                             width: double.infinity,
                             height: 165,
@@ -394,8 +394,8 @@ class _HomePage1State extends State<HomePage1> {
                               blurSize: 150,
                               menuItems: [
                                 FocusedMenuItem(
-                                    title: Text('Başlangıç seviye'),
-                                    trailingIcon: Icon(
+                                    title:const Text('Başlangıç seviye'),
+                                    trailingIcon:const Icon(
                                         FontAwesomeIcons.heartBroken,
                                         size: 35),
                                     onPressed: () {
@@ -408,8 +408,8 @@ class _HomePage1State extends State<HomePage1> {
                                               sayi: 1));
                                     }),
                                 FocusedMenuItem(
-                                    title: Text('Orta seviye'),
-                                    trailingIcon: Icon(
+                                    title: const Text('Orta seviye'),
+                                    trailingIcon: const Icon(
                                         FontAwesomeIcons.heartbeat,
                                         size: 35),
                                     onPressed: () => {
@@ -422,8 +422,8 @@ class _HomePage1State extends State<HomePage1> {
                                               sayi: 2))
                                     }),
                                 FocusedMenuItem(
-                                    title: Text('İleri seviye'),
-                                    trailingIcon: Icon(
+                                    title:const Text('İleri seviye'),
+                                    trailingIcon:const Icon(
                                         FontAwesomeIcons.solidHeart,
                                         size: 35),
                                     onPressed: () => {Navigator.pushNamed(
@@ -434,9 +434,9 @@ class _HomePage1State extends State<HomePage1> {
                                               secilenCalisma: "sirtHareketi",
                                               sayi: 3))}),
                                 FocusedMenuItem(
-                                    title: Text('İPTAL',
+                                    title:const Text('İPTAL',
                                         style: TextStyle(color: Colors.white)),
-                                    trailingIcon: Icon(
+                                    trailingIcon:const Icon(
                                         FontAwesomeIcons.powerOff,
                                         color: Colors.white,
                                         size: 35),
@@ -446,7 +446,7 @@ class _HomePage1State extends State<HomePage1> {
                               blurBackgroundColor: Colors.blueGrey[900],
                               menuOffset: 20,
                               openWithTap: true,
-                              duration: Duration(seconds: 0),
+                              duration: const Duration(seconds: 0),
                               animateMenuItems: false,
                               onPressed: () {},
                               child: ClipRRect(
@@ -458,14 +458,14 @@ class _HomePage1State extends State<HomePage1> {
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         colorFilter: ColorFilter.mode(
-                                            Color.fromRGBO(123, 39, 163, 1)
+                                         const   Color.fromRGBO(123, 39, 163, 1)
                                                 .withOpacity(0.4),
                                             BlendMode.srcOver),
-                                        image: AssetImage(
+                                        image:const AssetImage(
                                             "lib/assets/images/sirtKaslari.jpg"),
                                         fit: BoxFit.cover,
                                       ),
-                                      borderRadius: BorderRadius.only(
+                                      borderRadius:const BorderRadius.only(
                                           bottomLeft: Radius.circular(5),
                                           bottomRight: Radius.circular(5),
                                           topLeft: Radius.circular(5),
@@ -474,7 +474,7 @@ class _HomePage1State extends State<HomePage1> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(14.0),
                                       child: Container(
-                                        child: Text(
+                                        child: const Text(
                                           "SIRT \n KASLARI",
                                           style: TextStyle(
                                               color: Colors.white,
@@ -487,12 +487,12 @@ class _HomePage1State extends State<HomePage1> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                         const SizedBox(
                             height: 1,
                           ),
                           //KARIN KASLARI
                           Container(
-                            margin: EdgeInsets.only(
+                            margin: const EdgeInsets.only(
                                 top: 3.50, right: 1.5, left: 1.5),
                             width: double.infinity,
                             height: 165,
@@ -500,8 +500,8 @@ class _HomePage1State extends State<HomePage1> {
                               blurSize: 150,
                               menuItems: [
                                 FocusedMenuItem(
-                                    title: Text('Başlangıç seviye'),
-                                    trailingIcon: Icon(
+                                    title: const Text('Başlangıç seviye'),
+                                    trailingIcon: const Icon(
                                         FontAwesomeIcons.heartBroken,
                                         size: 35),
                                     onPressed: () {
@@ -514,8 +514,8 @@ class _HomePage1State extends State<HomePage1> {
                                               sayi: 1));
                                     }),
                                 FocusedMenuItem(
-                                    title: Text('Orta seviye'),
-                                    trailingIcon: Icon(
+                                    title:const Text('Orta seviye'),
+                                    trailingIcon:const Icon(
                                         FontAwesomeIcons.heartbeat,
                                         size: 35),
                                     onPressed: () => {
@@ -528,8 +528,8 @@ class _HomePage1State extends State<HomePage1> {
                                               sayi: 2))
                                     }),
                                 FocusedMenuItem(
-                                    title: Text('İleri seviye'),
-                                    trailingIcon: Icon(
+                                    title:const Text('İleri seviye'),
+                                    trailingIcon:const Icon(
                                         FontAwesomeIcons.solidHeart,
                                         size: 35),
                                     onPressed: () => {
@@ -542,9 +542,9 @@ class _HomePage1State extends State<HomePage1> {
                                               sayi: 3))
                                     }),
                                 FocusedMenuItem(
-                                    title: Text('İPTAL',
+                                    title:const Text('İPTAL',
                                         style: TextStyle(color: Colors.white)),
-                                    trailingIcon: Icon(
+                                    trailingIcon: const Icon(
                                         FontAwesomeIcons.powerOff,
                                         color: Colors.white,
                                         size: 35),
@@ -554,7 +554,7 @@ class _HomePage1State extends State<HomePage1> {
                               blurBackgroundColor: Colors.blueGrey[900],
                               menuOffset: 20,
                               openWithTap: true,
-                              duration: Duration(seconds: 0),
+                              duration:const Duration(seconds: 0),
                               animateMenuItems: false,
                               onPressed: () {},
                               child: ClipRRect(
@@ -566,14 +566,14 @@ class _HomePage1State extends State<HomePage1> {
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         colorFilter: ColorFilter.mode(
-                                            Color.fromRGBO(123, 39, 163, 1)
+                                          const  Color.fromRGBO(123, 39, 163, 1)
                                                 .withOpacity(0.4),
                                             BlendMode.srcOver),
-                                        image: AssetImage(
+                                        image: const AssetImage(
                                             "lib/assets/images/karinKaslari.jpg"),
                                         fit: BoxFit.cover,
                                       ),
-                                      borderRadius: BorderRadius.only(
+                                      borderRadius: const BorderRadius.only(
                                           bottomLeft: Radius.circular(5),
                                           bottomRight: Radius.circular(5),
                                           topLeft: Radius.circular(5),
@@ -582,7 +582,7 @@ class _HomePage1State extends State<HomePage1> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(14.0),
                                       child: Container(
-                                        child: Text(
+                                        child: const Text(
                                           "KARIN \n KASLARI",
                                           style: TextStyle(
                                               color: Colors.white,
@@ -596,12 +596,12 @@ class _HomePage1State extends State<HomePage1> {
                             ),
                           ),
 
-                          SizedBox(
+                        const  SizedBox(
                             height: 1,
                           ),
                           //BACAK KASLARI
                           Container(
-                            margin: EdgeInsets.only(
+                            margin: const EdgeInsets.only(
                                 top: 3.50, right: 1.5, left: 1.5),
                             width: double.infinity,
                             height: 165,
@@ -609,8 +609,8 @@ class _HomePage1State extends State<HomePage1> {
                               blurSize: 150,
                               menuItems: [
                                 FocusedMenuItem(
-                                    title: Text('Başlangıç seviye'),
-                                    trailingIcon: Icon(
+                                    title:const Text('Başlangıç seviye'),
+                                    trailingIcon:const Icon(
                                         FontAwesomeIcons.heartBroken,
                                         size: 35),
                                     onPressed: () {
@@ -623,8 +623,8 @@ class _HomePage1State extends State<HomePage1> {
                                               sayi: 1));
                                     }),
                                 FocusedMenuItem(
-                                    title: Text('Orta seviye'),
-                                    trailingIcon: Icon(
+                                    title:const Text('Orta seviye'),
+                                    trailingIcon:const Icon(
                                         FontAwesomeIcons.heartbeat,
                                         size: 35),
                                     onPressed: () => {
@@ -637,8 +637,8 @@ class _HomePage1State extends State<HomePage1> {
                                               sayi: 2))
                                     }),
                                 FocusedMenuItem(
-                                    title: Text('İleri seviye'),
-                                    trailingIcon: Icon(
+                                    title: const Text('İleri seviye'),
+                                    trailingIcon:const Icon(
                                         FontAwesomeIcons.solidHeart,
                                         size: 35),
                                     onPressed: () => {Navigator.pushNamed(
@@ -649,9 +649,9 @@ class _HomePage1State extends State<HomePage1> {
                                               secilenCalisma: "bacakHareketi",
                                               sayi: 3))}),
                                 FocusedMenuItem(
-                                    title: Text('İPTAL',
+                                    title: const Text('İPTAL',
                                         style: TextStyle(color: Colors.white)),
-                                    trailingIcon: Icon(
+                                    trailingIcon: const Icon(
                                         FontAwesomeIcons.powerOff,
                                         color: Colors.white,
                                         size: 35),
@@ -661,7 +661,7 @@ class _HomePage1State extends State<HomePage1> {
                               blurBackgroundColor: Colors.blueGrey[900],
                               menuOffset: 20,
                               openWithTap: true,
-                              duration: Duration(seconds: 0),
+                              duration: const Duration(seconds: 0),
                               animateMenuItems: false,
                               onPressed: () {},
                               child: ClipRRect(
@@ -673,14 +673,14 @@ class _HomePage1State extends State<HomePage1> {
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         colorFilter: ColorFilter.mode(
-                                            Color.fromRGBO(123, 39, 163, 1)
+                                            const Color.fromRGBO(123, 39, 163, 1)
                                                 .withOpacity(0.4),
                                             BlendMode.srcOver),
-                                        image: AssetImage(
+                                        image:const AssetImage(
                                             "lib/assets/images/bacakKaslari.jpg"),
                                         fit: BoxFit.cover,
                                       ),
-                                      borderRadius: BorderRadius.only(
+                                      borderRadius:const BorderRadius.only(
                                           bottomLeft: Radius.circular(5),
                                           bottomRight: Radius.circular(5),
                                           topLeft: Radius.circular(5),
@@ -689,7 +689,7 @@ class _HomePage1State extends State<HomePage1> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(14.0),
                                       child: Container(
-                                        child: Text(
+                                        child:const Text(
                                           "BACAK \n KASLARI",
                                           style: TextStyle(
                                               color: Colors.white,
@@ -712,7 +712,7 @@ class _HomePage1State extends State<HomePage1> {
               ],
             ),
           ),
-          bottomNavigationBar: AltMenu()),
+          bottomNavigationBar: const AltMenu()),
     );
   }
 }
