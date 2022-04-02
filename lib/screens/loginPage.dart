@@ -1,5 +1,8 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:fitness/auth.dart';
 import 'package:fitness/screens/homePage.dart';
 import 'package:fitness/screens/singinPage.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +19,8 @@ final formKey = GlobalKey<FormState>();
 class _LoginPageState extends State<LoginPage> {
   TextEditingController mail = TextEditingController();
   TextEditingController sifre = TextEditingController();
+
+  AuthService _authService = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,25 +110,20 @@ class _LoginPageState extends State<LoginPage> {
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
                             ),
-                            onPressed: () async {
-                              FocusScope.of(context).unfocus();//diğer ekrana geçiş yaparken klavye açık hatası
-                              FirebaseFirestore firestore =
-                                  FirebaseFirestore.instance;
-                              CollectionReference usersCollectionRef =
-                                  firestore.collection("usersCollection");
-                              var usersDocument =
-                                  usersCollectionRef.doc("doqan228@gmail.com");
-                              var gelenVeri = await usersDocument.get();
-                              dynamic map = gelenVeri.data();
-                              final String gelenMail = map["e-Mail"];
-                              final String gelenSifre = map["sifre"];
-                              if (mail.text == gelenMail &&
-                                  sifre.text == gelenSifre) {
-                                Navigator.pushNamedAndRemoveUntil(context,
-                                    HomePage1.sayfaName, (route) => false);
-                              } else {
-                                _girisBasarisizDialog(context);
-                              }
+                            onPressed: () {
+                              FocusScope.of(context)
+                                  .unfocus(); //diğer ekrana geçiş yaparken klavye açık hatası
+
+                              _authService
+                                  .signIn(mail.text, sifre.text)
+                                  .then((value) =>
+                                      Navigator.pushNamedAndRemoveUntil(
+                                          context,
+                                          HomePage1.sayfaName,
+                                          (route) => false))
+                                  .onError((error, stackTrace) =>
+                                      _girisBasarisizDialog(
+                                          context)); //on error deneyerek buldum :))
                             },
                             child: Text(
                               "GİRİŞ YAP",

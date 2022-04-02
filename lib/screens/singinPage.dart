@@ -4,6 +4,8 @@ import 'package:fitness/screens/loginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../auth.dart';
+
 class SinginPage extends StatefulWidget {
   static const String sayfaName = "/SinginPage";
 
@@ -22,6 +24,7 @@ class _SinginPageState extends State<SinginPage> {
   TextEditingController sifre = TextEditingController();
   TextEditingController sifreTekrar = TextEditingController();
 
+AuthService _authService =AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -385,21 +388,9 @@ class _SinginPageState extends State<SinginPage> {
                                   _kayitBasariliDialog(context);
                                   final snackBar =
                                       SnackBar(content: Text("submit"));
-                                  Map<String, dynamic> kullaniciData = {
-                                    "adiVeSoyadi": adi.text,
-                                    "e-Mail": mail.text,
-                                    "sifre": sifre.text,
-                                    "cinsiyet": secilenCinsiyet,
-                                    "kilo": secilenKilo,
-                                    "boy": secilenBoy,
-                                  };
-                                  FirebaseFirestore firestore =
-                                      FirebaseFirestore.instance;
-                                  CollectionReference usersCollectionRef =
-                                      firestore.collection("usersCollection");
-                                  usersCollectionRef
-                                      .doc(mail.text)
-                                      .set(kullaniciData);
+
+                                      //auth işlemi
+                                      _authService.creatPerson(adi.text, mail.text, sifre.text, secilenCinsiyet, secilenKilo, secilenBoy);
                                 } else {
                                   _kayitBasarisizDialog(context);
                                 }
