@@ -115,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                                   .unfocus(); //diğer ekrana geçiş yaparken klavye açık hatası
 
                               _authService
-                                  .signIn(mail.text, sifre.text)
+                                  .signIn(mail.text.trim(), sifre.text.trim())
                                   .then((value) =>
                                       Navigator.pushNamedAndRemoveUntil(
                                           context,
@@ -183,7 +183,7 @@ _girisBasarisizDialog(context) {
     headerAnimationLoop: false,
     animType: AnimType.BOTTOMSLIDE,
     title: 'ŞİFRE VEYA E-MAİL YANLIŞ',
-    desc: "Mail hesabınzı girerken boşuluk olmamasına dikkat ediniz!",
+    desc: "Mail ve şifrenizi tekrar deneyiniz!",
     showCloseIcon: true,
     btnOkOnPress: () {},
   )..show();
