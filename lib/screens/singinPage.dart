@@ -259,7 +259,7 @@ AuthService _authService =AuthService();
                                           margin:const EdgeInsets.only(
                                               right: 3, left: 3),
                                           child: ButtonTheme(
-                                            child: OutlineButton(
+                                            child: OutlinedButton(
                                               onPressed: () {
                                                 setState(() {
                                                   secilenKilo++;
@@ -269,8 +269,6 @@ AuthService _authService =AuthService();
                                                 FontAwesomeIcons.plus,
                                                 color: Colors.white,
                                               ),
-                                              borderSide:const BorderSide(
-                                                  color: Colors.white),
                                             ),
                                           ),
                                         ),
@@ -280,7 +278,7 @@ AuthService _authService =AuthService();
                                           margin:const EdgeInsets.only(
                                               right: 3, left: 3),
                                           child: ButtonTheme(
-                                            child: OutlineButton(
+                                            child: OutlinedButton(
                                               onPressed: () {
                                                 setState(() {
                                                   secilenKilo--;
@@ -290,8 +288,6 @@ AuthService _authService =AuthService();
                                                 FontAwesomeIcons.minus,
                                                 color: Colors.white,
                                               ),
-                                              borderSide: const BorderSide(
-                                                  color: Colors.white),
                                             ),
                                           ),
                                         ),
@@ -330,7 +326,7 @@ AuthService _authService =AuthService();
                                           margin: const EdgeInsets.only(
                                               right: 3, left: 3),
                                           child: ButtonTheme(
-                                            child: OutlineButton(
+                                            child: OutlinedButton(
                                               onPressed: () {
                                                 setState(() {
                                                   secilenBoy++;
@@ -340,8 +336,6 @@ AuthService _authService =AuthService();
                                                 FontAwesomeIcons.plus,
                                                 color: Colors.white,
                                               ),
-                                              borderSide: const BorderSide(
-                                                  color: Colors.white),
                                             ),
                                           ),
                                         ),
@@ -351,7 +345,7 @@ AuthService _authService =AuthService();
                                           margin: const EdgeInsets.only(
                                               right: 3, left: 3),
                                           child: ButtonTheme(
-                                            child: OutlineButton(
+                                            child: OutlinedButton(
                                               onPressed: () {
                                                 setState(() {
                                                   secilenBoy--;
@@ -361,8 +355,6 @@ AuthService _authService =AuthService();
                                                 FontAwesomeIcons.minus,
                                                 color: Colors.white,
                                               ),
-                                              borderSide: const BorderSide(
-                                                  color: Colors.white),
                                             ),
                                           ),
                                         ),
@@ -390,7 +382,7 @@ AuthService _authService =AuthService();
                                       SnackBar(content: Text("submit"));
 
                                       //auth işlemi
-                                      _authService.creatPerson(adi.text, mail.text, sifre.text, secilenCinsiyet, secilenKilo, secilenBoy);
+                                      _authService.creatPerson(adi.text.trim().toLowerCase(), mail.text.trim().toLowerCase(), sifre.text.trim(), secilenCinsiyet, secilenKilo, secilenBoy);
                                 } else {
                                   _kayitBasarisizDialog(context);
                                 }
