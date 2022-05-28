@@ -2,7 +2,8 @@ import 'package:fitness/screens/homePage.dart';
 import 'package:fitness/screens/notificationPage.dart';
 import 'package:fitness/screens/profilePage.dart';
 import 'package:flutter/material.dart';
-
+//TextStyle
+var metinTextStyle= TextStyle(color: const Color(0xffffffff),fontSize: 12);
 //Alt menü
 class AltMenu extends StatelessWidget {
   const AltMenu({Key? key}) : super(key: key);
@@ -122,3 +123,4 @@ class IconAltmenu extends StatelessWidget {
     );
   }
 }
+

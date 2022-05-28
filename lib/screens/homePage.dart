@@ -3,6 +3,7 @@
 
 import 'package:fitness/constants.dart';
 import 'package:fitness/egitimPlan/hareket1.dart';
+import 'package:fitness/screens/fitnesSetPage.dart';
 import 'package:flutter/material.dart';
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:focused_menu/focused_menu.dart';
@@ -15,7 +16,6 @@ class HomePage1 extends StatefulWidget {
   @override
   State<HomePage1> createState() => _HomePage1State();
 }
-
 List<CardItem> items = [
   CardItem(
     resimUrl: 'lib/assets/images/gogusKaslari.jpg',
@@ -807,6 +807,17 @@ class _HomePage1State extends State<HomePage1> {
                       child: Material( // slider etrafında yanan sönen ışık
                         child: InkWell(
                           onTap: () {
+                            switch (item.baslik) {
+                              case "FİTNESS SET":
+                                Navigator.pushNamed(context, FitnesSetPage.sayfaName);
+                                break;
+                              case "KİLO VERME":
+                              print("kilo");
+                              break;
+                              case "YOGA":
+                              print("yog");
+                              break;
+                            }
                           },
                           child: Container(
                             decoration: BoxDecoration(
