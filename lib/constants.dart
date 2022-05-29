@@ -1,9 +1,10 @@
+import 'package:fitness/screens/fitnessCalcuterPage.dart';
 import 'package:fitness/screens/homePage.dart';
 import 'package:fitness/screens/notificationPage.dart';
 import 'package:fitness/screens/profilePage.dart';
 import 'package:flutter/material.dart';
 //TextStyle
-var metinTextStyle= TextStyle(color: const Color(0xffffffff),fontSize: 12);
+TextStyle metinTextStyle= TextStyle(color: const Color(0xffffffff),fontSize: 15);
 //Alt menü
 class AltMenu extends StatelessWidget {
   const AltMenu({Key? key}) : super(key: key);
@@ -29,10 +30,12 @@ class AltMenu extends StatelessWidget {
                   selected: false,
                   onPressed: () {}),
               IconBottomBar(
-                  text: "Takvim",
-                  icon: Icons.date_range_outlined,
+                  text: "Hesaplayıcı",
+                  icon: Icons.calculate,
                   selected: false,
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.pushNamed(context, CalcuterPage.sayfaName);
+                  }),
               IconAltmenu(
                   text: "Anasayfa",
                   icon: Icons.home,

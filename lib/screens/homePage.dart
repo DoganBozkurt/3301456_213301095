@@ -1,6 +1,3 @@
-//import 'package:awesome_dialog/awesome_dialog.dart'; silme lazım olacak giriş sayfası için
-
-
 import 'package:fitness/constants.dart';
 import 'package:fitness/egitimPlan/hareket1.dart';
 import 'package:fitness/screens/fitnesSetPage.dart';
