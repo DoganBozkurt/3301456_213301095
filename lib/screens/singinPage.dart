@@ -4,7 +4,7 @@ import 'package:fitness/screens/loginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../auth.dart';
+import '../services/auth.dart';
 
 class SinginPage extends StatefulWidget {
   static const String sayfaName = "/SinginPage";

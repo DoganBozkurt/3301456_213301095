@@ -2,7 +2,7 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:fitness/auth.dart';
+import 'package:fitness/services/auth.dart';
 import 'package:fitness/screens/homePage.dart';
 import 'package:fitness/screens/singinPage.dart';
 import 'package:flutter/material.dart';

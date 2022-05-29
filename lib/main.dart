@@ -1,4 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:fitness/screens/fitnesSetPage.dart';
+import 'package:fitness/screens/fitnessCalcuterPage.dart';
 import 'package:fitness/screens/homePage.dart';
 import 'package:fitness/screens/notificationPage.dart';
 import 'package:fitness/egitimPlan/hareket1.dart';
@@ -38,7 +40,10 @@ class HomePage extends StatelessWidget {
             return MaterialPageRoute(
                 builder: (context) =>
                     Hareket1(settings.arguments as Kullanici));
-            
+            case FitnesSetPage.sayfaName:
+            return MaterialPageRoute(builder: (context) => FitnesSetPage());
+            case CalcuterPage.sayfaName:
+            return MaterialPageRoute(builder: (context) => CalcuterPage());
           default:
             null;
         }
