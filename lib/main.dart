@@ -1,13 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:fitness/models/raporlar_state.dart';
 import 'package:fitness/screens/fitnesSetPage.dart';
 import 'package:fitness/screens/fitnessCalcuterPage.dart';
 import 'package:fitness/screens/homePage.dart';
 import 'package:fitness/screens/notificationPage.dart';
 import 'package:fitness/egitimPlan/hareket1.dart';
 import 'package:fitness/screens/profilePage.dart';
+import 'package:fitness/screens/raporlarPage.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness/screens/singinPage.dart';
 import 'package:fitness/screens/loginPage.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,53 +23,67 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Future<FirebaseApp> _firebasBaslatma =
         Firebase.initializeApp(); //öcelikle firebaseyi başlatık
-    return MaterialApp(
-      theme: ThemeData(fontFamily: 'Roboto',),
-      onGenerateRoute: (settings) {
-        switch (settings.name) {
-          case HomePage.sayfaName:
-            return MaterialPageRoute(builder: (context) => HomePage());
-          case SinginPage.sayfaName:
-            return MaterialPageRoute(builder: (context) => SinginPage());
-          case LoginPage.sayfaName:
-            return MaterialPageRoute(builder: (context) => LoginPage());
-          case HomePage1.sayfaName:
-            return MaterialPageRoute(builder: (context) => HomePage1());
-          case ProfilePage.sayfaName:
-            return MaterialPageRoute(builder: (context) => ProfilePage());
-          case NotificationsPage.sayfaName:
-            return MaterialPageRoute(builder: (context) => NotificationsPage());
-          case Hareket1.sayfaName:
-            return MaterialPageRoute(
-                builder: (context) =>
-                    Hareket1(settings.arguments as Kullanici));
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (BuildContext context) {
+            return RaporlarState();
+          },
+        )
+      ],
+      child: MaterialApp(
+        theme: ThemeData(
+          fontFamily: 'Roboto',
+        ),
+        onGenerateRoute: (settings) {
+          switch (settings.name) {
+            case HomePage.sayfaName:
+              return MaterialPageRoute(builder: (context) => HomePage());
+            case SinginPage.sayfaName:
+              return MaterialPageRoute(builder: (context) => SinginPage());
+            case LoginPage.sayfaName:
+              return MaterialPageRoute(builder: (context) => LoginPage());
+            case HomePage1.sayfaName:
+              return MaterialPageRoute(builder: (context) => HomePage1());
+            case ProfilePage.sayfaName:
+              return MaterialPageRoute(builder: (context) => ProfilePage());
+            case NotificationsPage.sayfaName:
+              return MaterialPageRoute(
+                  builder: (context) => NotificationsPage());
+            case Hareket1.sayfaName:
+              return MaterialPageRoute(
+                  builder: (context) =>
+                      Hareket1(settings.arguments as Kullanici));
             case FitnesSetPage.sayfaName:
-            return MaterialPageRoute(builder: (context) => FitnesSetPage());
+              return MaterialPageRoute(builder: (context) => FitnesSetPage());
             case CalcuterPage.sayfaName:
-            return MaterialPageRoute(builder: (context) => CalcuterPage());
-          default:
-            null;
-        }
-      },
-      debugShowCheckedModeBanner: false,
-      home: FutureBuilder(
-          future: _firebasBaslatma,
-          builder: (context, snapshot) {
-            if (snapshot.hasError) {
-              //yanıt geldi ama hatalı ise
-              return const Center(
-                child: Text("beklenmeyen bir hata oluştu"),
-              );
-            } else if (snapshot.hasData) {
-              return Scaffold(
-                body: BaslangicEkrani(),
-              );
-            } else {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-          }),
+              return MaterialPageRoute(builder: (context) => CalcuterPage());
+            case RaporlarPage.sayfaName:
+              return MaterialPageRoute(builder: (context) => RaporlarPage());
+            default:
+              null;
+          }
+        },
+        debugShowCheckedModeBanner: false,
+        home: FutureBuilder(
+            future: _firebasBaslatma,
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                //yanıt geldi ama hatalı ise
+                return const Center(
+                  child: Text("beklenmeyen bir hata oluştu"),
+                );
+              } else if (snapshot.hasData) {
+                return Scaffold(
+                  body: BaslangicEkrani(),
+                );
+              } else {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+            }),
+      ),
     );
   }
 }
@@ -124,7 +141,8 @@ class BaslangicEkrani extends StatelessWidget {
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               primary: const Color.fromRGBO(123, 39, 163, 1),
-                              shadowColor: const Color.fromRGBO(200, 47, 129, 1),
+                              shadowColor:
+                                  const Color.fromRGBO(200, 47, 129, 1),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
@@ -162,7 +180,8 @@ class BaslangicEkrani extends StatelessWidget {
                               ),
                               style: ElevatedButton.styleFrom(
                                 primary: const Color.fromRGBO(194, 46, 131, 1),
-                                shadowColor: const Color.fromRGBO(128, 39, 161, 1),
+                                shadowColor:
+                                    const Color.fromRGBO(128, 39, 161, 1),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20.0),
                                 ),

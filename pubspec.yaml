@@ -41,6 +41,8 @@ dependencies:
   firebase_auth: ^3.3.12
   http: ^0.13.4
   provider: ^6.0.3
+  numberpicker: ^2.1.1
+  get: ^4.6.5
   
 
 dev_dependencies:
