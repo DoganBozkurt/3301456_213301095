@@ -1,10 +1,13 @@
+import 'package:fitness/models/raporlar.dart';
 import 'package:fitness/screens/fitnessCalcuterPage.dart';
 import 'package:fitness/screens/homePage.dart';
 import 'package:fitness/screens/notificationPage.dart';
 import 'package:fitness/screens/profilePage.dart';
+import 'package:fitness/screens/raporlarPage.dart';
 import 'package:flutter/material.dart';
 //TextStyle
 TextStyle metinTextStyle= TextStyle(color: const Color(0xffffffff),fontSize: 15);
+TextStyle beyazTextStyle= TextStyle(color: const Color(0xffffffff));
 //Alt menü
 class AltMenu extends StatelessWidget {
   const AltMenu({Key? key}) : super(key: key);
@@ -28,7 +31,9 @@ class AltMenu extends StatelessWidget {
                   text: "Raporlar",
                   icon: Icons.feed,
                   selected: false,
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.pushNamed(context, RaporlarPage.sayfaName);
+                  }),
               IconBottomBar(
                   text: "Hesaplayıcı",
                   icon: Icons.calculate,
