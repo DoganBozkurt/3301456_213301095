@@ -1,16 +1,14 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:fitness/models/raporlar_state.dart';
+import 'package:fitness/screens/raporlarPage.dart';
 import 'package:fitness/screens/fitnesSetPage.dart';
 import 'package:fitness/screens/fitnessCalcuterPage.dart';
 import 'package:fitness/screens/homePage.dart';
 import 'package:fitness/screens/notificationPage.dart';
 import 'package:fitness/egitimPlan/hareket1.dart';
 import 'package:fitness/screens/profilePage.dart';
-import 'package:fitness/screens/raporlarPage.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness/screens/singinPage.dart';
 import 'package:fitness/screens/loginPage.dart';
-import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,67 +21,58 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Future<FirebaseApp> _firebasBaslatma =
         Firebase.initializeApp(); //öcelikle firebaseyi başlatık
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (BuildContext context) {
-            return RaporlarState();
-          },
-        )
-      ],
-      child: MaterialApp(
-        theme: ThemeData(
-          fontFamily: 'Roboto',
-        ),
-        onGenerateRoute: (settings) {
-          switch (settings.name) {
-            case HomePage.sayfaName:
-              return MaterialPageRoute(builder: (context) => HomePage());
-            case SinginPage.sayfaName:
-              return MaterialPageRoute(builder: (context) => SinginPage());
-            case LoginPage.sayfaName:
-              return MaterialPageRoute(builder: (context) => LoginPage());
-            case HomePage1.sayfaName:
-              return MaterialPageRoute(builder: (context) => HomePage1());
-            case ProfilePage.sayfaName:
-              return MaterialPageRoute(builder: (context) => ProfilePage());
-            case NotificationsPage.sayfaName:
-              return MaterialPageRoute(
-                  builder: (context) => NotificationsPage());
-            case Hareket1.sayfaName:
-              return MaterialPageRoute(
-                  builder: (context) =>
-                      Hareket1(settings.arguments as Kullanici));
-            case FitnesSetPage.sayfaName:
-              return MaterialPageRoute(builder: (context) => FitnesSetPage());
-            case CalcuterPage.sayfaName:
-              return MaterialPageRoute(builder: (context) => CalcuterPage());
-            case RaporlarPage.sayfaName:
-              return MaterialPageRoute(builder: (context) => RaporlarPage());
-            default:
-              null;
-          }
-        },
-        debugShowCheckedModeBanner: false,
-        home: FutureBuilder(
-            future: _firebasBaslatma,
-            builder: (context, snapshot) {
-              if (snapshot.hasError) {
-                //yanıt geldi ama hatalı ise
-                return const Center(
-                  child: Text("beklenmeyen bir hata oluştu"),
-                );
-              } else if (snapshot.hasData) {
-                return Scaffold(
-                  body: BaslangicEkrani(),
-                );
-              } else {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-            }),
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Roboto',
       ),
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case HomePage.sayfaName:
+            return MaterialPageRoute(builder: (context) => HomePage());
+          case SinginPage.sayfaName:
+            return MaterialPageRoute(builder: (context) => SinginPage());
+          case LoginPage.sayfaName:
+            return MaterialPageRoute(builder: (context) => LoginPage());
+          case HomePage1.sayfaName:
+            return MaterialPageRoute(builder: (context) => HomePage1());
+          case ProfilePage.sayfaName:
+            return MaterialPageRoute(builder: (context) => ProfilePage());
+          case NotificationsPage.sayfaName:
+            return MaterialPageRoute(
+                builder: (context) => NotificationsPage());
+          case Hareket1.sayfaName:
+            return MaterialPageRoute(
+                builder: (context) =>
+                    Hareket1(settings.arguments as Kullanici));
+          case FitnesSetPage.sayfaName:
+            return MaterialPageRoute(builder: (context) => FitnesSetPage());
+          case CalcuterPage.sayfaName:
+            return MaterialPageRoute(builder: (context) => CalcuterPage());
+          case Raporlar.sayfaName:
+            return MaterialPageRoute(builder: (context) => Raporlar());
+          default:
+            null;
+        }
+      },
+      debugShowCheckedModeBanner: false,
+      home: FutureBuilder(
+          future: _firebasBaslatma,
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              //yanıt geldi ama hatalı ise
+              return const Center(
+                child: Text("beklenmeyen bir hata oluştu"),
+              );
+            } else if (snapshot.hasData) {
+              return Scaffold(
+                body: BaslangicEkrani(),
+              );
+            } else {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+          }),
     );
   }
 }

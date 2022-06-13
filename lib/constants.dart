@@ -1,9 +1,8 @@
-import 'package:fitness/models/raporlar.dart';
+import 'package:fitness/screens/raporlarPage.dart';
 import 'package:fitness/screens/fitnessCalcuterPage.dart';
 import 'package:fitness/screens/homePage.dart';
 import 'package:fitness/screens/notificationPage.dart';
 import 'package:fitness/screens/profilePage.dart';
-import 'package:fitness/screens/raporlarPage.dart';
 import 'package:flutter/material.dart';
 //TextStyle
 TextStyle metinTextStyle= TextStyle(color: const Color(0xffffffff),fontSize: 15);
@@ -32,7 +31,7 @@ class AltMenu extends StatelessWidget {
                   icon: Icons.feed,
                   selected: false,
                   onPressed: () {
-                    Navigator.pushNamed(context, RaporlarPage.sayfaName);
+                    Navigator.pushNamed(context, Raporlar.sayfaName);
                   }),
               IconBottomBar(
                   text: "Hesaplayıcı",

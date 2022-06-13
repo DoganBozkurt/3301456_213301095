@@ -1,11 +1,11 @@
-import 'dart:ui';
-
 import 'package:fitness/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ProfilePage extends StatefulWidget {
   static const String sayfaName = "/ProfilePage";
+
+  const ProfilePage({Key? key}) : super(key: key);
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -39,21 +39,10 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Stack(
-                      children: [
-                        const CircleAvatar(
-                          radius: 50,
-                          backgroundImage:
-                              const AssetImage("lib/assets/images/avatar.jpg"),
-                        ),
-                        const Positioned(
-                            bottom: 20.0,
-                            right: 10.0,
-                            child: const InkWell(
-                                child: Icon(Icons.camera_alt,
-                                    size: 28.0,
-                                    color: Color.fromRGBO(95, 0, 108, 1))))
-                      ],
+                    const CircleAvatar(
+                      radius: 50,
+                      backgroundImage:
+                          const AssetImage("lib/assets/images/avatar.jpg"),
                     ),
                     Container(
                       child: const Text("Adı Soyadı"),
@@ -136,17 +125,20 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         child: Column(
                           children: [
-                            const SizedBox(height: 1.5,),
+                            const SizedBox(
+                              height: 1.5,
+                            ),
                             const Icon(
                               FontAwesomeIcons.weight,
                               color: Colors.white,
                               size: 35,
                             ),
-                            const SizedBox(height: 1.5,),
+                            const SizedBox(
+                              height: 1.5,
+                            ),
                             Text("KİLONUZ: $secilenKilo",
                                 style: const TextStyle(
                                     color: Colors.white, fontSize: 12)),
-                          
                           ],
                         ),
                       ),
@@ -162,17 +154,20 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         child: Column(
                           children: [
-                            const SizedBox(height: 1.5,),
+                            const SizedBox(
+                              height: 1.5,
+                            ),
                             const Icon(
                               FontAwesomeIcons.restroom,
                               color: Colors.white,
                               size: 35,
                             ),
-                            const SizedBox(height: 1.5,),
+                            const SizedBox(
+                              height: 1.5,
+                            ),
                             Text("BOYUNUZ: $secilenBoy",
                                 style: const TextStyle(
                                     color: Colors.white, fontSize: 12)),
-                           
                           ],
                         ),
                       ),
@@ -199,13 +194,13 @@ class _ProfilePageState extends State<ProfilePage> {
                                 end: Alignment.bottomLeft,
                                 colors: [
                               Color.fromRGBO(95, 0, 108, 1),
-                               Color.fromRGBO(132, 40, 223, 1),
+                              Color.fromRGBO(132, 40, 223, 1),
                             ])),
                       ),
                       const Positioned(
                         top: 3.0,
                         left: 58.0,
-                        child:  Text(
+                        child: Text(
                           "Hedef Kilo",
                           style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
@@ -224,13 +219,13 @@ class _ProfilePageState extends State<ProfilePage> {
                         left: 140.0,
                         child: Text(
                           "76",
-                          style:  TextStyle(color: Colors.white, fontSize: 25),
+                          style: TextStyle(color: Colors.white, fontSize: 25),
                         ),
                       ),
                       const Positioned(
                         top: 52.0,
                         left: 175.0,
-                        child:  Text(
+                        child: Text(
                           "KG",
                           style: TextStyle(color: Colors.white, fontSize: 10),
                         ),
@@ -250,7 +245,6 @@ class _ProfilePageState extends State<ProfilePage> {
               const SizedBox(
                 height: 3.5,
               ),
-
 
               //aylık eğitim
               Expanded(
@@ -281,9 +275,9 @@ class _ProfilePageState extends State<ProfilePage> {
                       const Positioned(
                         top: 60.0,
                         left: 130.0,
-                        child:  Text(
+                        child: Text(
                           "/5",
-                          style:  TextStyle(color: Colors.white, fontSize: 10),
+                          style: TextStyle(color: Colors.white, fontSize: 10),
                         ),
                       ),
                       //Çizgiler
@@ -308,7 +302,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
 //Senin Programın
               const Text("SENİN PORGRAMIN",
-                  style:  TextStyle(color: Colors.white, fontSize: 16)),
+                  style: TextStyle(color: Colors.white, fontSize: 16)),
               Expanded(
                 flex: 5,
                 child: Container(
@@ -324,8 +318,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: Column(
                       children: [
                         Container(
-                          margin:
-                              const EdgeInsets.only(left: 5.0, right: 5.0, top: 5.0),
+                          margin: const EdgeInsets.only(
+                              left: 5.0, right: 5.0, top: 5.0),
                           width: double.infinity,
                           height: 165,
                           decoration: BoxDecoration(
@@ -334,14 +328,15 @@ class _ProfilePageState extends State<ProfilePage> {
                                   const Color.fromRGBO(123, 39, 163, 1)
                                       .withOpacity(0.4),
                                   BlendMode.srcOver),
-                              image: const AssetImage("lib/assets/images/sirtKaslari.jpg"),
+                              image: const AssetImage(
+                                  "lib/assets/images/sirtKaslari.jpg"),
                               fit: BoxFit.cover,
                             ),
                             borderRadius: const BorderRadius.only(
-                                bottomLeft:  Radius.circular(5),
-                                bottomRight:  Radius.circular(5),
-                                topLeft:  Radius.circular(5),
-                                topRight:  Radius.circular(5)),
+                                bottomLeft: Radius.circular(5),
+                                bottomRight: Radius.circular(5),
+                                topLeft: Radius.circular(5),
+                                topRight: Radius.circular(5)),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(14.0),
@@ -367,12 +362,13 @@ class _ProfilePageState extends State<ProfilePage> {
                                   const Color.fromRGBO(123, 39, 163, 1)
                                       .withOpacity(0.4),
                                   BlendMode.srcOver),
-                              image: const AssetImage("lib/assets/images/kolKaslari.jpg"),
+                              image: const AssetImage(
+                                  "lib/assets/images/kolKaslari.jpg"),
                               fit: BoxFit.cover,
                             ),
                             borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(5),
-                                bottomRight:  Radius.circular(5),
+                                bottomRight: Radius.circular(5),
                                 topLeft: Radius.circular(5),
                                 topRight: Radius.circular(5)),
                           ),
@@ -400,14 +396,15 @@ class _ProfilePageState extends State<ProfilePage> {
                                   const Color.fromRGBO(123, 39, 163, 1)
                                       .withOpacity(0.4),
                                   BlendMode.srcOver),
-                              image: const AssetImage("lib/assets/images/bacakKaslari.jpg"),
+                              image: const AssetImage(
+                                  "lib/assets/images/bacakKaslari.jpg"),
                               fit: BoxFit.cover,
                             ),
                             borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(5),
-                                bottomRight:  Radius.circular(5),
+                                bottomRight: Radius.circular(5),
                                 topLeft: Radius.circular(5),
-                                topRight:  Radius.circular(5)),
+                                topRight: Radius.circular(5)),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(14.0),
@@ -425,7 +422,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
-
             ],
           ),
         ),
