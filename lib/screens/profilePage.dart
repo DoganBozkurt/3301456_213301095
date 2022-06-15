@@ -1,4 +1,8 @@
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness/constants.dart';
+import 'package:fitness/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -12,8 +16,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  int secilenBoy = 184;
-  int secilenKilo = 76;
+  var st=AuthService.map;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,14 +42,15 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const CircleAvatar(
+                     CircleAvatar(
                       radius: 50,
-                      backgroundImage:
-                          const AssetImage("lib/assets/images/avatar.jpg"),
+                      backgroundImage: st["cinsiyet"].toString()=="erkek" ? 
+                      const AssetImage("lib/assets/images/avatar.jpg")
+                      :const AssetImage("lib/assets/images/avatarKadin.jpg"),
                     ),
+                    const SizedBox(height: 3,),
                     Container(
-                      child: const Text("Adı Soyadı"),
-                      color: Colors.white,
+                      child:  Text("${st["adiVeSoyadi"].toString().toUpperCase()}",style: TextStyle(color:Colors.white)),
                     ),
                   ],
                 ),
@@ -66,7 +70,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                            color: const Color.fromRGBO(95, 0, 108, 1),
+                            color: st["cinsiyet"].toString()=="kadın"?Colors.blue:const Color.fromRGBO(95, 0, 108, 1),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Column(
@@ -94,7 +98,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.blue,
+                            color:  st["cinsiyet"].toString()=="erkek"?Colors.blue:const Color.fromRGBO(95, 0, 108, 1),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Column(
@@ -136,7 +140,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             const SizedBox(
                               height: 1.5,
                             ),
-                            Text("KİLONUZ: $secilenKilo",
+                            Text("KİLONUZ: ${st['kilo'].toString()}",
                                 style: const TextStyle(
                                     color: Colors.white, fontSize: 12)),
                           ],
@@ -165,7 +169,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             const SizedBox(
                               height: 1.5,
                             ),
-                            Text("BOYUNUZ: $secilenBoy",
+                            Text("BOYUNUZ: ${st['boy'].toString()}",
                                 style: const TextStyle(
                                     color: Colors.white, fontSize: 12)),
                           ],
@@ -182,7 +186,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   style: TextStyle(color: Colors.white, fontSize: 16)),
               //hedef Kilo
               Expanded(
-                  flex: 2,
+                  flex: 1,
                   child: Stack(
                     children: [
                       Container(
@@ -197,14 +201,6 @@ class _ProfilePageState extends State<ProfilePage> {
                               Color.fromRGBO(132, 40, 223, 1),
                             ])),
                       ),
-                      const Positioned(
-                        top: 3.0,
-                        left: 58.0,
-                        child: Text(
-                          "Hedef Kilo",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                      ),
                       Positioned(
                         bottom: 1.0,
                         left: 50.0,
@@ -214,11 +210,11 @@ class _ProfilePageState extends State<ProfilePage> {
                           height: 80,
                         ),
                       ),
-                      const Positioned(
+                       Positioned(
                         top: 45.0,
                         left: 140.0,
                         child: Text(
-                          "76",
+                          "${st['kilo'].toString()}",
                           style: TextStyle(color: Colors.white, fontSize: 25),
                         ),
                       ),
@@ -301,131 +297,10 @@ class _ProfilePageState extends State<ProfilePage> {
                   )),
 
 //Senin Programın
-              const Text("SENİN PORGRAMIN",
-                  style: TextStyle(color: Colors.white, fontSize: 16)),
-              Expanded(
-                flex: 5,
-                child: Container(
-                  height: 580,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
-                    ),
-                  ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(
-                              left: 5.0, right: 5.0, top: 5.0),
-                          width: double.infinity,
-                          height: 165,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              colorFilter: ColorFilter.mode(
-                                  const Color.fromRGBO(123, 39, 163, 1)
-                                      .withOpacity(0.4),
-                                  BlendMode.srcOver),
-                              image: const AssetImage(
-                                  "lib/assets/images/sirtKaslari.jpg"),
-                              fit: BoxFit.cover,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                                bottomLeft: Radius.circular(5),
-                                bottomRight: Radius.circular(5),
-                                topLeft: Radius.circular(5),
-                                topRight: Radius.circular(5)),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(14.0),
-                            child: Container(
-                              child: const Text(
-                                "SIRT \n KASLARI",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 30),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 4,
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(left: 5.0, right: 5.0),
-                          width: double.infinity,
-                          height: 165,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              colorFilter: ColorFilter.mode(
-                                  const Color.fromRGBO(123, 39, 163, 1)
-                                      .withOpacity(0.4),
-                                  BlendMode.srcOver),
-                              image: const AssetImage(
-                                  "lib/assets/images/kolKaslari.jpg"),
-                              fit: BoxFit.cover,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                                bottomLeft: Radius.circular(5),
-                                bottomRight: Radius.circular(5),
-                                topLeft: Radius.circular(5),
-                                topRight: Radius.circular(5)),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(14.0),
-                            child: Container(
-                              child: const Text(
-                                "KOL \n KASLARI",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 30),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 4,
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(left: 5.0, right: 5.0),
-                          width: double.infinity,
-                          height: 165,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              colorFilter: ColorFilter.mode(
-                                  const Color.fromRGBO(123, 39, 163, 1)
-                                      .withOpacity(0.4),
-                                  BlendMode.srcOver),
-                              image: const AssetImage(
-                                  "lib/assets/images/bacakKaslari.jpg"),
-                              fit: BoxFit.cover,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                                bottomLeft: Radius.circular(5),
-                                bottomRight: Radius.circular(5),
-                                topLeft: Radius.circular(5),
-                                topRight: Radius.circular(5)),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(14.0),
-                            child: Container(
-                              child: const Text(
-                                "BACAK \n KASLARI",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 30),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
       ),
     );
-  }
+    }
 }

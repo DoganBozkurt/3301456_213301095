@@ -14,7 +14,7 @@ class SinginPage extends StatefulWidget {
 }
 
 final formKey = GlobalKey<FormState>();
-String secilenCinsiyet = "belirtilmemiş";
+String secilenCinsiyet = "erkek";
 int secilenBoy = 180;
 int secilenKilo = 75;
 
@@ -75,15 +75,10 @@ AuthService _authService =AuthService();
                           CircleAvatar(
                             radius: 50,
                             backgroundImage:
-                                AssetImage("lib/assets/images/avatar.jpg"),
+                                secilenCinsiyet=="erkek" ? 
+                      const AssetImage("lib/assets/images/avatar.jpg")
+                      :const AssetImage("lib/assets/images/avatarKadin.jpg"),
                           ),
-                          Positioned(
-                              bottom: 20.0,
-                              right: 10.0,
-                              child: InkWell(
-                                  child: Icon(Icons.camera_alt,
-                                      size: 28.0,
-                                      color: Color.fromRGBO(95, 0, 108, 1))))
                         ],
                       ),
                       Padding(
